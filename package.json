@@ -1,14 +1,15 @@
-{ "name": "node-IPInfoDB", 
+{ 
+	"name": "node-IPInfoDB", 
 	"description": "Simple http://ipinfodb.com client.", 
 	"tags": ["ip address", "detect", "ipinfodb", "utility"], 
 	"version": "0.0.1", 
 	"author" : "Gianfranco Cecconi <giacecco@giacec.co>", 
 	"repository": { 
 		"type" : "git", 
-		"url" : "http://github.com/mikeal/request.git***"
+		"url" : "git://github.com/giacecco/node-IPInfoDB.git"
   }, 
   "bugs":	{ 
-  	"url" : "http://github.com/mikeal/request/issues****" 
+  	"url" : "https://github.com/giacecco/node-IPInfoDB/issues" 
   }, 
   "engines" : ["node >= 0.8.14"], 
   "main" : "./lib/main", 
@@ -16,6 +17,7 @@
   	"request": ">=2.11.4"	
   }, 
   "scripts": { 
-  	"test": "node tests/run.js" 
+  	"compile": "coffee -c -o lib/ src/*",
+  	"test": "npm run-script compile; coffee test/test.coffee" 
   }
 }

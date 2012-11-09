@@ -1,4 +1,4 @@
-IPInfoDB = (ipInfoDbApiKey) ->
+exports.IPInfoDB = (ipInfoDbApiKey) ->
 
 	this.request = require 'request' 
 	this.ipInfoDbApiKey = ipInfoDbApiKey
@@ -16,10 +16,3 @@ IPInfoDB = (ipInfoDbApiKey) ->
 			callback error 
 
 	return this
-			
-	
-ipinfodb = new IPInfoDB('23c6760303d8c4873fdc36c67a04d384104e14f6a1904a83c2e93e03e0b5e857')
-ipinfodb.getMyLocation(
-	(err, body) ->
-		console.log body
-)
