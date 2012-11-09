@@ -7,7 +7,7 @@
 	"repository": { 
 		"type" : "git", 
 		"url" : "git://github.com/giacecco/node-IPInfoDB.git"
-  }, 
+	}, 
   "bugs":	{ 
   	"url" : "https://github.com/giacecco/node-IPInfoDB/issues" 
   }, 
@@ -17,7 +17,7 @@
   	"request": ">=2.11.4"	
   }, 
   "scripts": { 
-  	"compile": "coffee -c -o lib/ src/*",
-  	"test": "npm run-script compile; coffee test/test.coffee" 
+  	"build": "cake build",
+  	"test": "cake test" 
   }
 }
