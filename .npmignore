@@ -1,0 +1,6 @@
+.git*
+.project
+*.md
+*~
+src/
+test/

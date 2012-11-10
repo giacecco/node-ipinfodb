@@ -1,9 +1,9 @@
 _ = require "underscore"
 fs = require 'fs'
-assert = require("assert")
+chai = require 'chai'  
+chai.should()
 
-
-tests = [
+TESTS = [
 		# 86.179.147.206 is the ip my broadband router at home was given on 10/11/12, nearby London
 		ip: "86.179.147.206"
 		expectedResponse: 
@@ -36,6 +36,9 @@ tests = [
 ]
 
 
+console.log "Remember to save the IPInfoDB API key in the IPINFODB_API_KEY
+  file in the 'test' folder before running the test scripts"
+
 ipInfoDbApiKey = ''
 ipinfodb = undefined
 
@@ -43,7 +46,7 @@ describe 'The testing suite', () ->
 
 	it 'should be able to read the API key from the IPINFODB_API_KEY file', (done) ->
 		fs.readFile 'test/IPINFODB_API_KEY', (err, text) ->
-			assert.notEqual text, '' # TODO: Not really enough here
+			text.should.not.equal '' # TODO: Not really enough here
 			ipInfoDbApiKey = text
 			done()
 
@@ -53,9 +56,9 @@ describe 'The testing suite', () ->
 
 describe 'IPInfoDB', () ->
 
-	_.each tests, (t) ->
+	_.each TESTS, (t) ->
 		it 'should be able to query the IPInfoDB API and fetch the expected data for ' + t.ip, (done) ->
 			ipinfodb.getLocation t.ip, (err, body) ->
-				assert.deepEqual body, t.expectedResponse
+				body.should.deep.equal t.expectedResponse
 				done()
 
