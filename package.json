@@ -2,7 +2,7 @@
 	"name": "node-ipinfodb", 
 	"description": "Simple http://ipinfodb.com client.", 
 	"tags": ["ip address", "detect", "ipinfodb", "utility"], 
-	"version": "0.0.2", 
+	"version": "0.0.3", 
 	"author": "Gianfranco Cecconi <giacecco@giacec.co>", 
 	"repository": { 
 		"type": "git", 
