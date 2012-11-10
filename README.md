@@ -1,4 +1,4 @@
-node-IPInfoDB
+node-ipinfodb
 =============
 A simple, very thin node.js wrapper for 
 [http://www.ipinfodb.com](http://www.ipinfodb.com). 
