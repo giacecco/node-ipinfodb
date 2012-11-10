@@ -6,10 +6,10 @@
 	"author": "Gianfranco Cecconi <giacecco@giacec.co>", 
 	"repository": { 
 		"type": "git", 
-		"url": "git://github.com/giacecco/node-IPInfoDB.git"
+		"url": "git://github.com/giacecco/node-ipinfodb.git"
 	}, 
   "bugs":	{ 
-  	"url": "https://github.com/giacecco/node-IPInfoDB/issues" 
+  	"url": "https://github.com/giacecco/node-ipinfodb/issues" 
   }, 
   "engines": ["node >= 0.8.14"], 
   "main": "./lib/main", 
