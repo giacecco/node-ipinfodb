@@ -11,7 +11,7 @@ exports.IPInfoDB = (ipInfoDbApiKey) ->
 		requestURL += '&ip=' + ipAddress if ipAddress
 		this.request requestURL, (error, response, body) ->
 			if not error and response.statusCode == 200
-				callback null, body
+				callback null, JSON.parse(body)
 				return
 			callback error 
 
