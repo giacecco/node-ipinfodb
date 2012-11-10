@@ -14,11 +14,16 @@
   "engines" : ["node >= 0.8.14"], 
   "main" : "./lib/main", 
   "dependencies": { 
-  	"request": ">=2.11.4",
+  	"request": ">=2.12.0",
   	"underscore": ">=1.4.2"
   }, 
+	"devDependencies": {
+		"coffee-script": ">=1.4.0",
+		"mocha": ">=1.7.0"
+	},
   "scripts": { 
-  	"build": "cake build",
-  	"test": "cake test" 
+  	"build": "coffee -c -o lib/ src/",
+		"example": "coffee test/example.coffee",
+  	"test": "mocha --compilers coffee:coffee-script test/test.coffee" 
   }
 }

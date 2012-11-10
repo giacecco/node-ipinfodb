@@ -1,3 +1,5 @@
+*~
 node_modules
 .project
 test/IPINFODB_API_KEY
+test/*.js
