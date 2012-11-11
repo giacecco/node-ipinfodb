@@ -1,4 +1,3 @@
-_ = require "underscore"
 fs = require 'fs'
 chai = require 'chai'  
 chai.should()
@@ -42,7 +41,7 @@ console.log "Remember to save the IPInfoDB API key in the IPINFODB_API_KEY
 ipInfoDbApiKey = ''
 ipinfodb = undefined
 
-describe 'The testing suite', () ->
+describe 'The testing suite', ->
 
 	it 'should be able to read the API key from the IPINFODB_API_KEY file', (done) ->
 		fs.readFile 'test/IPINFODB_API_KEY', (err, text) ->
@@ -51,12 +50,12 @@ describe 'The testing suite', () ->
 			done()
 
 	it 'should be able to require the source code for the module', (done) ->
-		ipinfodb = new require("../lib/main").IPInfoDB(ipInfoDbApiKey)
+		ipinfodb = new (require("../lib/main"))(ipInfoDbApiKey)
 		done()
 
-describe 'IPInfoDB', () ->
+describe 'IPInfoDB', ->
 
-	_.each TESTS, (t) ->
+	for t in TESTS
 		it 'should be able to query the IPInfoDB API and fetch the expected data for ' + t.ip, (done) ->
 			ipinfodb.getLocation t.ip, (err, body) ->
 				body.should.deep.equal t.expectedResponse

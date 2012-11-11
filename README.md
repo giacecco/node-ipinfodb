@@ -13,17 +13,18 @@ _[your API key]_ with the above key.
 
 ```JavaScript
 var API_KEY = "[your API key]";
-var ipinfodb = new require("node-ipinfodb").IPInfoDB(API_KEY);
+var ipinfodb = new (require("node-ipinfodb"))(API_KEY);
 ipinfodb.getMyLocation(function (err, results) {
   console.log(results);
 });
 ```
 
-... or, more simply, in CoffeeScript:
+Note the brackets around *require("node-ipinfodb")*, the code won't work 
+without! Below is the same in CoffeeScript:
 
 ```CoffeeScript
 API_KEY = "[your API key]"
-ipinfodb = new require("node-ipinfodb").IPInfoDB(API_KEY)
+ipinfodb = new (require("node-ipinfodb"))(API_KEY)
 ipinfodb.getMyLocation (err, results) ->
   console.log results
 ```

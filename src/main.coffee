@@ -1,18 +1,17 @@
-exports.IPInfoDB = (ipInfoDbApiKey) ->
+class module.exports
+	
+	constructor: (@ipInfoDbApiKey) ->
+    @request = require 'request' 
 
-	this.request = require 'request' 
-	this.ipInfoDbApiKey = ipInfoDbApiKey
+  getMyLocation: (callback) =>
+    @getLocation undefined, callback
 
-	this.getMyLocation = (callback) ->
-		this.getLocation undefined, callback
-
-	this.getLocation = (ipAddress, callback) ->
-		requestURL = 'http://api.ipinfodb.com/v3/ip-city/?format=json&key=' + this.ipInfoDbApiKey
-		requestURL += '&ip=' + ipAddress if ipAddress
-		this.request requestURL, (error, response, body) ->
-			if not error and response.statusCode == 200
-				callback null, JSON.parse(body)
-				return
-			callback error 
-
-	return this
+  getLocation: (ipAddress, callback) =>
+  	# TODO: what about checking that the input is at least of the right type?
+    requestURL = 'http://api.ipinfodb.com/v3/ip-city/?format=json&key=' + @ipInfoDbApiKey
+    requestURL += '&ip=' + ipAddress if ipAddress?
+    @request requestURL, (error, response, body) ->
+      if not error and response.statusCode == 200
+        callback null, JSON.parse(body)
+        return
+      callback error 
