@@ -3,6 +3,15 @@ node-ipinfodb
 A simple, very thin node.js wrapper for 
 [http://www.ipinfodb.com](http://www.ipinfodb.com). 
 
+#Install 
+
+Install it via npm.
+
+```
+npm install node-ipinfodb
+```
+
+
 #Usage
 In case you did not already, register with IPInfoDB 
 [here](http://ipinfodb.com/register.php) first and take note of the API key
@@ -11,7 +20,10 @@ they will assign to you.
 A straight forward example in node.js is below. Remember to replace 
 _[your API key]_ with the above key.
 
+
 ```JavaScript
+
+
 var API_KEY = "[your API key]";
 var ipinfodb = new (require("node-ipinfodb"))(API_KEY);
 ipinfodb.getMyLocation(function (err, results) {
